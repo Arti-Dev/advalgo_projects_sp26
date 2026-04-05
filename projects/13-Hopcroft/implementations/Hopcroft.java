@@ -16,7 +16,7 @@ import java.util.*;
  * Time complexity: O(|alphabet| · |states| · log |states|), achieved by
  * always adding the smaller half of a split to the worklist.
  */
-public class HopcroftMinimize {
+public class Hopcroft {
 
   // ---- Result container for a DFA ----
   static class DFA {
