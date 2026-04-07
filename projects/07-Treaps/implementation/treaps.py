@@ -1,4 +1,5 @@
 import random
+import os
 
 """
 Treap (tree + heap) - a randomized binary search tree with heap properties
@@ -173,50 +174,62 @@ class Treap:
 def inorder_string(treap):
         return " ".join(str(x) for x in treap.inorder())
 
+# testing framework to run any input file
+def run_test(input_file, output_file):
+    treap = Treap()
+    actual_output = []
 
+    with open(input_file, "r") as f:
+        for line in f:
+            parts = line.strip().split()
+            if not parts:
+                continue
+
+            cmd = parts[0]
+
+            if cmd == "insert":
+                treap.insert(int(parts[1]))
+
+            elif cmd == "erase":
+                treap.erase(int(parts[1]))
+
+            elif cmd == "search":
+                result = treap.search(int(parts[1]))
+                actual_output.append(str(result).lower())
+
+            elif cmd == "inorder":
+                actual_output.append(inorder_string(treap))
+
+    # read expected output
+    with open(output_file, "r") as f:
+        expected_output = [line.strip() for line in f if line.strip()]
+
+    # compare
+    passed = actual_output == expected_output
+
+    print(f"{input_file}: {'PASS' if passed else 'FAIL'}")
+
+    if not passed:
+        print("Expected:")
+        print("\n".join(expected_output))
+        print("Got:")
+        print("\n".join(actual_output))
+
+    return passed
+
+# currently set to only handle 3 tests
 if __name__ == "__main__":
+    base_dir = os.path.dirname(__file__)  
+    io_dir = os.path.join(base_dir, "io")
+
+    total = 3
     passed = 0
-    total = 4
 
-    # basic insert and search
-    treaps = Treap()
-    treaps.insert(5)
-    treaps.insert(3)
-    treaps.insert(7)
-    treaps.insert(2)
-    treaps.insert(4)
+    for i in range(1, total + 1):
+        in_file = os.path.join(io_dir, f"sample.in.{i}")
+        out_file = os.path.join(io_dir, f"sample.out.{i}")
 
-    test_insert = treaps.search(5) and treaps.search(2) and not treaps.search(6)
-    print("Test 1: insert/search is a", "PASS" if test_insert else "FAIL")
-    if test_insert:
-        passed += 1
+        if run_test(in_file, out_file):
+            passed += 1
 
-    # test inorder
-    expected = "2 3 4 5 7"
-    actual = inorder_string(treaps)
-    test_inorder = expected == actual
-    print("Test 2: inorder is a", "PASS" if test_inorder else "FAIL")
-    if test_inorder:
-        passed += 1
-
-    # delete test (your method is called erase, not delete)
-    treaps.erase(3)
-    expected_del = "2 4 5 7"
-    actual_del = inorder_string(treaps)
-    test_del = expected_del == actual_del and not treaps.search(3)
-    print("Test 3: delete is a", "PASS" if test_del else "FAIL")
-    if test_del:
-        passed += 1
-
-    # delete non-existent
-    treaps.erase(42)
-    expected4 = "2 4 5 7"
-    actual4 = inorder_string(treaps)
-    test4 = expected4 == actual4
-    print("Test 4: delete something that doesnt exist", "PASS" if test4 else "FAIL", f"(got: {actual4})")
-    if test4:
-        passed += 1
-
-    print(f"\nwhen running my treaps you got: {passed} / {total} tests passed.")
-    if passed != total:
-        exit(1)
+    print(f"\nFinal: {passed} / {total} tests passed.")
