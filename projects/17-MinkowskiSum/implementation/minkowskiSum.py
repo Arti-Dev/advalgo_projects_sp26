@@ -1,4 +1,3 @@
-
 # Point class with add, subtract, and cross product
 class Point:
     def __init__(self, x, y):
@@ -14,7 +13,7 @@ class Point:
     def cross(self, other):
         return self.x * other.y - self.y * other.x
 
-# reorders points in a polygon s.t. first element is lowest y, if equal y lowest x
+# reorders (shifts) points in a polygon s.t. first element is lowest y, if equal y lowest x
 # returns list of Points sorted ccw
 def reorderPolygon(polygon):
     minVertexIdx = 0
@@ -82,6 +81,7 @@ for i in range(m):
     x, y = (float(j) for j in input().split(" "))
     polygon2.append(Point(x, y))
 
+# outputs new Minkowski Sum polygon, prints each point on a new line ccw
 newPolygon = minkowskiSum(polygon1, polygon2)
 for pt in newPolygon:
     print(f"{pt.x} {pt.y}")
