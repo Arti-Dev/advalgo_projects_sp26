@@ -16,7 +16,7 @@ Go [back to home page](../../index.html)
 - Implementations:
 	- [C++](./implementations/hyperLogLog.cpp)
 	- [Java](./implementations/coinChange.java)
-	- [Python](./implementations/coinChange.py)
+	- [Python](./implementations/hyperLogLog.py)
 	- io
 		- [test input 1](./implementations/io/sample.in.1)
 		- [test output 1](./implementations/io/sample.out.1)
