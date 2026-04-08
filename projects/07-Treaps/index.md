@@ -17,11 +17,11 @@ Go [back to home page](../../index.html)
 	- [Python](./implementations/treaps.py)
 	- io
 		- [test input 1](./implementations/io/sample.in.1)
-		- [test input 1](./implementations/io/sample.in.2)
-		- [test input 1](./implementations/io/sample.in.3)
+		- [test input 2](./implementations/io/sample.in.2)
+		- [test input 3](./implementations/io/sample.in.3)
 		- [test output 1](./implementations/io/sample.out.1)
-		- [test output 1](./implementations/io/sample.out.2)
-		- [test output 1](./implementations/io/sample.out.3)
+		- [test output 2](./implementations/io/sample.out.2)
+		- [test output 3](./implementations/io/sample.out.3)
 
 <a name="overview"></a>Slides
 ---------------------------------------
