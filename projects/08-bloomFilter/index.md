@@ -15,7 +15,7 @@ Go [back to home page](../../index.html)
 
 - Implementations:
 	- [C++](./implementation/bloomFilter.cpp)
-	- [Java](./implementation/Main.java) (with [BloomFilter.java](./implementation/BloomFilter.java))
+	- [Java](./implementation/BloomFilter.java)
 	- [Python](./implementation/BloomFilter.py)
 - I/O (three separate cases; first line of each test file is the case count, usually `1`)
 	- Tests: [test_1.txt](./implementation/io/test_1.txt), [test_2.txt](./implementation/io/test_2.txt), [test_3.txt](./implementation/io/test_3.txt)
