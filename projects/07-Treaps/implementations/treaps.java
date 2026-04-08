@@ -1,6 +1,4 @@
 import java.util.Random;
-<<<<<<< HEAD
-=======
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -8,7 +6,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
->>>>>>> 3f19eb025ca6e3f7cb63f65ad0fd2c6da094a373
 
 public class treaps {
     /*
@@ -197,71 +194,12 @@ public class treaps {
         String result = "";
         if (!left.isEmpty()) {
             result += left + " ";
-<<<<<<< HEAD
-        }; 
-=======
         }
->>>>>>> 3f19eb025ca6e3f7cb63f65ad0fd2c6da094a373
         result += node;
         if (!right.isEmpty()) result += " " + right;
         return result;
     }
 
-<<<<<<< HEAD
-    /*
-    
-    */
-    public static void main(String[] args) {
-        int passed = 0;
-        int total = 4;
-
-        // basic insert and search
-        treaps treaps = new treaps();
-        treaps.insert(5);
-        treaps.insert(3);
-        treaps.insert(7);
-        treaps.insert(2);
-        treaps.insert(4);
-        boolean testinsert = treaps.search(5) && treaps.search(2) && !treaps.search(6);
-        System.out.println("Test 1: insert/search is a" + (testinsert ? "PASS" : "FAIL"));
-        if (testinsert) {
-            passed++;
-        }
-
-        // make sure inorder is right
-        // test inorder should be 2 3 4 5 7 because we inserted those values 
-        String expected = "2 3 4 5 7";
-        String actual = inorderString(treaps);
-        boolean testinorder = expected.equals(actual);
-        System.out.println("Test 2: inorder is a " + (testinorder ? "PASS" : "FAIL"));
-        if (testinorder) {
-            passed++;
-        }
-
-
-        // delete
-        // test that we went from 2 3 4 5 7 to 2 4 5 7 and that search for the deleted node returns false
-        treaps.delete(3);
-        String expecteddel = "2 4 5 7";
-        String actualdel = inorderString(treaps);
-        boolean testdel = expecteddel.equals(actualdel) && !treaps.search(3);
-        System.out.println("Test 3: delete is a " + (testdel ? "PASS" : "FAIL"));
-        if (testdel) {
-            passed++; 
-        } 
-
-        // Test Case 4: if we try to delete something that doesnt exist it wont change 
-        treaps.delete(42);
-        String expected4 = "2 4 5 7";
-        String actual4 = inorderString(treaps);
-        boolean test4 = expected4.equals(actual4);
-        System.out.println("Test 4: delete something that doesnt exist  " + (test4 ? "PASS" : "FAIL") + " (got: " + actual4 + ")");
-        if (test4) {
-            passed++;
-        }
-        // test that all of our cases passed and return to user!
-        System.out.println("\nwhen running my treaps you got: " + passed + " / " + total + " tests passed.");
-=======
     private static boolean runTest(String inputFile, String outputFile) {
         treaps treap = new treaps();
         List<String> actualOutput = new ArrayList<>();
@@ -331,7 +269,6 @@ public class treaps {
 
         System.out.println();
         System.out.println("Final: " + passed + " / " + total + " tests passed.");
->>>>>>> 3f19eb025ca6e3f7cb63f65ad0fd2c6da094a373
         if (passed != total) {
             System.exit(1);
         }

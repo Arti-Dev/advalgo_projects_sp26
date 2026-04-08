@@ -1,9 +1,7 @@
-Project 00 - Coin Change
+Project 07 - Treaps
 ===============================
 
 Go [back to home page](../../index.html)
-
-**NOTE THAT THIS IS JUST A TEMPLATE. THE LINKS BELOW DO NOT WORK UNTIL A PROJECT IS ACTUALLY SUBMITTED / PUSHED TO THIS REPOSITORY**
 
 <a name="overview"></a>Executive Summary
 ---------------------------------------
@@ -14,13 +12,16 @@ Go [back to home page](../../index.html)
 ---------------------------------------
 
 - Implementations:
-	- [C++](./implementations/coinChange.cpp)
-	- [Java](./implementations/coinChange.java)
-	- [Python](./implementations/coinChange.py)
+	- [C++](./implementations/treaps.cpp)
+	- [Java](./implementations/treaps.java)
+	- [Python](./implementations/treaps.py)
 	- io
 		- [test input 1](./implementations/io/sample.in.1)
+		- [test input 1](./implementations/io/sample.in.2)
+		- [test input 1](./implementations/io/sample.in.3)
 		- [test output 1](./implementations/io/sample.out.1)
-		- ...add more as needed
+		- [test output 1](./implementations/io/sample.out.2)
+		- [test output 1](./implementations/io/sample.out.3)
 
 <a name="overview"></a>Slides
 ---------------------------------------

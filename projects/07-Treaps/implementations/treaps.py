@@ -1,8 +1,5 @@
 import random
-<<<<<<< HEAD
-=======
 import os
->>>>>>> 3f19eb025ca6e3f7cb63f65ad0fd2c6da094a373
 
 """
 Treap (tree + heap) - a randomized binary search tree with heap properties
@@ -177,55 +174,6 @@ class Treap:
 def inorder_string(treap):
         return " ".join(str(x) for x in treap.inorder())
 
-<<<<<<< HEAD
-
-if __name__ == "__main__":
-    passed = 0
-    total = 4
-
-    # basic insert and search
-    treaps = Treap()
-    treaps.insert(5)
-    treaps.insert(3)
-    treaps.insert(7)
-    treaps.insert(2)
-    treaps.insert(4)
-
-    test_insert = treaps.search(5) and treaps.search(2) and not treaps.search(6)
-    print("Test 1: insert/search is a", "PASS" if test_insert else "FAIL")
-    if test_insert:
-        passed += 1
-
-    # test inorder
-    expected = "2 3 4 5 7"
-    actual = inorder_string(treaps)
-    test_inorder = expected == actual
-    print("Test 2: inorder is a", "PASS" if test_inorder else "FAIL")
-    if test_inorder:
-        passed += 1
-
-    # delete test (your method is called erase, not delete)
-    treaps.erase(3)
-    expected_del = "2 4 5 7"
-    actual_del = inorder_string(treaps)
-    test_del = expected_del == actual_del and not treaps.search(3)
-    print("Test 3: delete is a", "PASS" if test_del else "FAIL")
-    if test_del:
-        passed += 1
-
-    # delete non-existent
-    treaps.erase(42)
-    expected4 = "2 4 5 7"
-    actual4 = inorder_string(treaps)
-    test4 = expected4 == actual4
-    print("Test 4: delete something that doesnt exist", "PASS" if test4 else "FAIL", f"(got: {actual4})")
-    if test4:
-        passed += 1
-
-    print(f"\nwhen running my treaps you got: {passed} / {total} tests passed.")
-    if passed != total:
-        exit(1)
-=======
 # testing framework to run any input file
 def run_test(input_file, output_file):
     treap = Treap()
@@ -285,4 +233,3 @@ if __name__ == "__main__":
             passed += 1
 
     print(f"\nFinal: {passed} / {total} tests passed.")
->>>>>>> 3f19eb025ca6e3f7cb63f65ad0fd2c6da094a373
