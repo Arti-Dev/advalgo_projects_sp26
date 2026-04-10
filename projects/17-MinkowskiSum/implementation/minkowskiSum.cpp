@@ -87,7 +87,7 @@ vector<point> minkowskiSum(vector<point>& polyA, vector<point>& polyB) {
 }
 
 int main() {
-    // Read both polynomials in
+    // Read both polygons in
     int n, m;
     cin >> n >> m;
     vector<point> polyA;

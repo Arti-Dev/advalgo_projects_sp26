@@ -167,9 +167,11 @@ class Edge{
         double y2 = e.b.y-e.a.y;
         return x1*y2 - x2*y1;
     }
+    // Dot product of the vector representation of the edges
     public double dot(Edge e){
         return direction().dot(e.direction());
     }
+    // Returns 1 if this edge has a larger radial angle than e and -1 if smaller (or in the same direction)
     public int orientation(Edge e){
         double c1 = AXIS.cross(this);
         double c2 = AXIS.cross(e);
@@ -183,6 +185,7 @@ class Edge{
         if(c3 > 0) return 1;
         return -1;
     }
+    // This does what it sounds like
     public double magnitude(){
         return direction().magnitude();
     }
@@ -198,6 +201,7 @@ class Point{
         this.x = x;
         this.y = y;
     }
+    // Its a dot product my guy
     public double dot(Point p){
         return x*p.x + y*p.y;
     }
@@ -205,6 +209,7 @@ class Point{
     public Point add(Point p){
         return new Point(x+p.x, y+p.y);
     }
+    // Euclidean distance from the origin to this point
     public double magnitude(){
         return Math.sqrt(x*x + y*y);
     }
