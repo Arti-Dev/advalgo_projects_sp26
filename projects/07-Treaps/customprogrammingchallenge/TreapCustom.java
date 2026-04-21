@@ -344,32 +344,6 @@ public class TreapCustom {
     }
 
     /*
-    helper to return inorder traversal as a string
-    this is mostly useful if you want additional manual checks later
-    */
-    private static String inorderString(TreapCustom t) {
-        return inorderString(t.root).trim();
-    }
-
-    private static String inorderString(Node root) {
-        if (root == null) return "";
-
-        String left = inorderString(root.left);
-        String node = Integer.toString(root.key);
-        String right = inorderString(root.right);
-
-        String result = "";
-        if (!left.isEmpty()) {
-            result += left + " ";
-        }
-        result += node;
-        if (!right.isEmpty()) {
-            result += " " + right;
-        }
-        return result;
-    }
-
-    /*
     This helper runs one test case file.
 
     Each input file is expected to look like:
