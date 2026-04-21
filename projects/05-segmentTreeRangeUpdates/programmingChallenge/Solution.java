@@ -60,7 +60,7 @@ public class Solution {
         results.append('\n');
         
         for (int i = 0; i < queries; i++){
-            tree.printTree();
+            //tree.printTree();
             char type = scan.next().charAt(0);
             if (type == 'U'){
                 if (type == 'U'){
