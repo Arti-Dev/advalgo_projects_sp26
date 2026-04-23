@@ -1,4 +1,10 @@
 import sys
+import io
+from pathlib import Path
+
+
+# Set this to True to run the 20 test cases.
+TEST = False
 
 # This problem doesn't use Python's default character ordering.
 # We compare characters using the following order:
@@ -273,8 +279,92 @@ def decode_transmission(corrupted_bwt):
     return smallest_message
 
 
+# Run all of the test cases and report how many passed.
+# This function reads each test.in.* file then compares the produced output
+# against the corresponding test.out.* file. 
+def run_tests():
+    # Find the project root and locate the io directory that stores the
+    # test.in.* and test.out.* files.
+    project_root = Path(__file__).resolve().parent.parent
+    io_dir = project_root / "io"
+
+    # Keep track of how many test cases pass.
+    tests_passed = 0
+
+    # Run tests 1-20.
+    for i in range(1, 21):
+        # Build the file paths for this test case.
+        # For example, if i = 1, the corresponding files are
+        # test.in.1 and test.out.1.
+        input_path = io_dir / ("test.in." + str(i))
+        output_path = io_dir / ("test.out." + str(i))
+
+        # Read the input file in the same way the program would from stdin.
+        with input_path.open("r", encoding="utf-8") as input_file:
+            input_text = input_file.read()
+
+        # Read the output file to compare actual output against. 
+        with output_path.open("r", encoding="utf-8") as output_file:
+            output_text = output_file.read()
+
+        # Print basic information about the test to see which one is running.
+        print(f"Test {i}")
+        print(f"Input file: {input_path.name}")
+        print(f"Output file: {output_path.name}")
+
+        # Save stdin to restore it after the test in case something crashes.
+        prev_stdin = sys.stdin
+        try:
+            # This treats a string as a file-like object so that parse_input()
+            # will behave properly.
+            sys.stdin = io.StringIO(input_text)
+            
+            # Parse the input and store each corrupted BWT.
+            transmissions = parse_input()
+
+            # Allocate an array for keeping track of the original messages so
+            # we can print output in the correct order.
+            output = []
+
+            # Decode each transmission independently.
+            # For each corrupted BWT, decode the lexicographically smallest original message
+            # and store it later for output. 
+            for corrupted_bwt in transmissions:
+                decoded_message = decode_transmission(corrupted_bwt)
+                output.append(decoded_message)
+
+            # Print all answers at once, one original message per line.
+            actual_output = "\n".join(output)
+        finally:
+            # Restore the original stdin in case something crashes. 
+            sys.stdin = prev_stdin
+
+        # Check whether the program's output matches the expected output.
+        outputs_match = (actual_output == output_text)
+
+        # Print the program's actual output to see why a test fails.
+        print(f"Program output:\n{actual_output}")
+        
+        # Print the results of the test case.
+        if outputs_match:
+            tests_passed += 1
+            print("Result: PASS")
+        else:
+            print("Result: FAIL")
+
+        print()
+    
+    # Print a final summary after all test cases have ran.
+    print(f"Passed {tests_passed}/20 tests")
+
+
 # Read all corrupted transmissions, decode each one, and print the original messages.
 def main():
+    # Runs the 20 test cases if TEST is set to True.
+    if TEST:
+        run_tests()
+        return
+
     # Parse the input and store each corrupted BWT.
     transmissions = parse_input()
 
