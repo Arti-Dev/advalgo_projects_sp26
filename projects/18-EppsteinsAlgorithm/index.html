@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Project 00 - Coin Change</title>
+  <title>Project 18 - Eppstein's Algorithm</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -25,33 +25,34 @@
   <link rel="stylesheet" href="../../markdown.css" />
 </head>
 <body>
-<h1 id="project-00---coin-change">Project 00 - Coin Change</h1>
+<h1 id="project-18---eppsteins-algorithm">Project 18 - Eppstein’s
+Algorithm</h1>
 <p>Go <a href="../../index.html">back to home page</a></p>
-<p><strong>NOTE THAT THIS IS JUST A TEMPLATE. THE LINKS BELOW DO NOT
-WORK UNTIL A PROJECT IS ACTUALLY SUBMITTED / PUSHED TO THIS
-REPOSITORY</strong></p>
 <h2 id="executive-summary"><a name="overview"></a>Executive Summary</h2>
 <ul>
-<li><a href="./executiveSummary.pdf">Executive Summary</a></li>
+<li><a href="./ExecutiveSummary.pdf">Executive Summary</a></li>
 </ul>
 <h2 id="implementation"><a name="overview"></a>Implementation</h2>
 <ul>
 <li>Implementations:
 <ul>
-<li><a href="./implementations/coinChange.cpp">C++</a></li>
-<li><a href="./implementations/coinChange.java">Java</a></li>
-<li><a href="./implementations/coinChange.py">Python</a></li>
+<li><a href="./implementations/EppsteinsAlgorithm.cpp">C++</a></li>
+<li><a href="./implementations/EppsteinsAlgorithm.java">Java</a></li>
+<li><a href="./implementations/EppsteinsAlgorithm.py">Python</a></li>
 <li>io
 <ul>
-<li><a href="./implementations/io/sample.in.1">test input 1</a></li>
-<li><a href="./implementations/io/sample.out.1">test output 1</a></li>
-<li>…add more as needed</li>
+<li><a href="./implementations/io/input1.txt">test input 1</a></li>
+<li><a href="./implementations/io/output%60.txt">test output 1</a></li>
+<li><a href="./implementations/io/input2.txt">test input 2</a></li>
+<li><a href="./implementations/io/output2.txt">test output 2</a></li>
+<li><a href="./implementations/io/input3.txt">test input 3</a></li>
+<li><a href="./implementations/io/output3.txt">test output 3</a></li>
 </ul></li>
 </ul></li>
 </ul>
 <h2 id="slides"><a name="overview"></a>Slides</h2>
 <ul>
-<li><a href="./slides/presentation_coinChange.pptx">Presentation
+<li><a href="./slides/eppstein_powerpoint_final.pptx">Presentation
 Slides</a></li>
 </ul>
 <h2 id="programming-challenge"><a name="overview"></a>Programming
@@ -62,15 +63,50 @@ Challenge</a>
 <ul>
 <li>Solutions:
 <ul>
-<li><a
-href="./programmingChallenge/solutions.pcSol_cpp.cpp">C++</a></li>
+<li><a href="./programmingChallenge/solutions/solution.cpp">C++</a></li>
 </ul></li>
 <li>Test Cases:
 <ul>
-<li><a href="./programmingChallenge/io/test.in.1">Case 1 input</a></li>
-<li><a href="./programmingChallenge/io/test.out.1">Case 1
-output</a></li>
-<li>…add the others here as needed</li>
+<li><a href="./programmingChallenge/io/1.in">Case 1 input</a></li>
+<li><a href="./programmingChallenge/io/1.ans">Case 1 output</a></li>
+<li><a href="./programmingChallenge/io/2.in">Case 2 input</a></li>
+<li><a href="./programmingChallenge/io/2.ans">Case 2 output</a></li>
+<li><a href="./programmingChallenge/io/3.in">Case 3 input</a></li>
+<li><a href="./programmingChallenge/io/3.ans">Case 3 output</a></li>
+<li><a href="./programmingChallenge/io/4.in">Case 4 input</a></li>
+<li><a href="./programmingChallenge/io/4.ans">Case 4 output</a></li>
+<li><a href="./programmingChallenge/io/5.in">Case 5 input</a></li>
+<li><a href="./programmingChallenge/io/5.ans">Case 5 output</a></li>
+<li><a href="./programmingChallenge/io/6.in">Case 6 input</a></li>
+<li><a href="./programmingChallenge/io/6.ans">Case 6 output</a></li>
+<li><a href="./programmingChallenge/io/7.in">Case 7 input</a></li>
+<li><a href="./programmingChallenge/io/7.ans">Case 7 output</a></li>
+<li><a href="./programmingChallenge/io/8.in">Case 8 input</a></li>
+<li><a href="./programmingChallenge/io/8.ans">Case 8 output</a></li>
+<li><a href="./programmingChallenge/io/9.in">Case 9 input</a></li>
+<li><a href="./programmingChallenge/io/9.ans">Case 9 output</a></li>
+<li><a href="./programmingChallenge/io/10.in">Case 10 input</a></li>
+<li><a href="./programmingChallenge/io/10.ans">Case 10 output</a></li>
+<li><a href="./programmingChallenge/io/11.in">Case 11 input</a></li>
+<li><a href="./programmingChallenge/io/11.ans">Case 11 output</a></li>
+<li><a href="./programmingChallenge/io/12.in">Case 12 input</a></li>
+<li><a href="./programmingChallenge/io/12.ans">Case 12 output</a></li>
+<li><a href="./programmingChallenge/io/13.in">Case 13 input</a></li>
+<li><a href="./programmingChallenge/io/13.ans">Case 13 output</a></li>
+<li><a href="./programmingChallenge/io/14.in">Case 14 input</a></li>
+<li><a href="./programmingChallenge/io/14.ans">Case 14 output</a></li>
+<li><a href="./programmingChallenge/io/15.in">Case 15 input</a></li>
+<li><a href="./programmingChallenge/io/15.ans">Case 15 output</a></li>
+<li><a href="./programmingChallenge/io/16.in">Case 16 input</a></li>
+<li><a href="./programmingChallenge/io/16.ans">Case 16 output</a></li>
+<li><a href="./programmingChallenge/io/17.in">Case 17 input</a></li>
+<li><a href="./programmingChallenge/io/17.ans">Case 17 output</a></li>
+<li><a href="./programmingChallenge/io/18.in">Case 18 input</a></li>
+<li><a href="./programmingChallenge/io/18.ans">Case 18 output</a></li>
+<li><a href="./programmingChallenge/io/19.in">Case 19 input</a></li>
+<li><a href="./programmingChallenge/io/19.ans">Case 19 output</a></li>
+<li><a href="./programmingChallenge/io/20.in">Case 20 input</a></li>
+<li><a href="./programmingChallenge/io/20.ans">Case 20 output</a></li>
 </ul></li>
 </ul></li>
 </ul>
